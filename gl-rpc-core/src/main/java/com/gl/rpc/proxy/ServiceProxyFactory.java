@@ -12,4 +12,12 @@ public class ServiceProxyFactory {
                 new ServiceProxy());
     }
 
+    public static<T> T getMockProxy(Class<T> tClass){
+        return (T) Proxy.newProxyInstance(
+                tClass.getClassLoader(),
+                new Class[]{tClass},
+                new MockServiceProxy()
+        );
+    }
+
 }

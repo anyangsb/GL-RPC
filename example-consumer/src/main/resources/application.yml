@@ -1,0 +1,5 @@
+rpc:
+  name: glrpc
+  version: 2.0
+  serverPost: 8081
+  rpc.mock: true
