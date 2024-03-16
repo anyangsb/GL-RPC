@@ -2,7 +2,7 @@ package com.gl.example.provider;
 
 import com.gl.example.common.service.UserService;
 import com.gl.rpc.RpcApplication;
-import com.gl.rpc.register.LocalRegister;
+import com.gl.rpc.registry.LocalRegister;
 import com.gl.rpc.server.VertxHttpServer;
 
 public class EasyProviderExample {

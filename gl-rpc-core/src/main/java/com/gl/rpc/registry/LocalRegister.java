@@ -1,4 +1,4 @@
-package com.gl.rpc.register;
+package com.gl.rpc.registry;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

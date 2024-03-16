@@ -14,11 +14,13 @@ public class EasyConsumerExample {
         UserService userService = ServiceProxyFactory.getProxy(UserService.class);
         User user = new User();
         user.setName("gl");
-        User newUser = userService.getUser(user);
-        if(newUser !=null){
-            System.out.println(newUser.getName());
-        }else{
-            System.out.println("Null");
+        for(int i=0;i<3;i++) {
+            User newUser = userService.getUser(user);
+            if (newUser != null) {
+                System.out.println(newUser.getName());
+            } else {
+                System.out.println("Null");
+            }
         }
     }
 }
