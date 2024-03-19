@@ -1,5 +1,8 @@
 package com.gl.rpc.config;
 
+import com.gl.rpc.fault.retry.RetryStrategyKeys;
+import com.gl.rpc.fault.tolerant.TolerantStrategyKeys;
+import com.gl.rpc.loadbalancer.LoadBalancerKeys;
 import com.gl.rpc.serializer.Serializer;
 import com.gl.rpc.serializer.SerializerFactory;
 import com.gl.rpc.serializer.SerializerKeys;
@@ -29,4 +32,20 @@ public class RpcConfig {
      * 注册中心
      */
     private RegistryConfig registryConfig = new RegistryConfig();
+
+    /**
+     * 负载均衡器
+     */
+    private String loadBalancer = LoadBalancerKeys.ROUND_ROBIN;
+
+    /**
+     * 重试策略
+     */
+    private String retryStrategy = RetryStrategyKeys.NO;
+
+
+    /**
+     * 容错机制
+     */
+    private String tolerantStrategy = TolerantStrategyKeys.FAIL_FAST;
 }

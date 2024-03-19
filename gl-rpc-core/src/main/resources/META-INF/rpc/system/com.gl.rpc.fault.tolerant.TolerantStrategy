@@ -1,4 +1,4 @@
-failBack=com.yupi.yurpc.fault.tolerant.FailBackTolerantStrategy
-failFast=com.yupi.yurpc.fault.tolerant.FailFastTolerantStrategy
-failOver=com.yupi.yurpc.fault.tolerant.FailOverTolerantStrategy
-failSafe=com.yupi.yurpc.fault.tolerant.FailSafeTolerantStrategy
+failBack=com.gl.rpc.fault.tolerant.FailBackTolerantStrategy
+failFast=com.gl.rpc.fault.tolerant.FailFastTolerantStrategy
+failOver=com.gl.rpc.fault.tolerant.FailOverTolerantStrategy
+failSafe=com.gl.rpc.fault.tolerant.FailSafeTolerantStrategy

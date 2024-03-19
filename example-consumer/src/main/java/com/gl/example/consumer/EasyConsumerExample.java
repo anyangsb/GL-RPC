@@ -7,6 +7,7 @@ import com.gl.rpc.proxy.ServiceProxyFactory;
 /**
  * 消费者实例
  */
+@Deprecated
 public class EasyConsumerExample {
 
     public static void main(String[] args) {
@@ -14,13 +15,11 @@ public class EasyConsumerExample {
         UserService userService = ServiceProxyFactory.getProxy(UserService.class);
         User user = new User();
         user.setName("gl");
-        for(int i=0;i<3;i++) {
-            User newUser = userService.getUser(user);
-            if (newUser != null) {
+        User newUser = userService.getUser(user);
+        if (newUser != null) {
                 System.out.println(newUser.getName());
-            } else {
+        } else {
                 System.out.println("Null");
-            }
         }
     }
 }

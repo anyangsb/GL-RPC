@@ -21,7 +21,7 @@ public class JdkSerializer implements Serializer{
             return (T) objectInputStream.readObject();
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
-        }finally {
+        } finally {
             objectInputStream.close();
         }
     }

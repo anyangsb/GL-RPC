@@ -5,6 +5,7 @@ import com.gl.rpc.RpcApplication;
 import com.gl.rpc.registry.LocalRegister;
 import com.gl.rpc.server.VertxHttpServer;
 
+@Deprecated
 public class EasyProviderExample {
 
     public static void main(String[] args) {

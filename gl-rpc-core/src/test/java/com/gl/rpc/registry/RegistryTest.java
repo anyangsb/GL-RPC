@@ -1,9 +1,7 @@
-package com.yupi.yurpc.registry;
+package com.gl.rpc.registry;
 
 import com.gl.rpc.config.RegistryConfig;
 import com.gl.rpc.model.ServiceMetaInfo;
-import com.gl.rpc.registry.EtcdRegistry;
-import com.gl.rpc.registry.Registry;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
