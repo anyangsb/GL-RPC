@@ -3,7 +3,7 @@ package com.gl.rpc.server;
 import com.gl.rpc.RpcApplication;
 import com.gl.rpc.model.RpcRequest;
 import com.gl.rpc.model.RpcResponse;
-import com.gl.rpc.registry.LocalRegister;
+import com.gl.rpc.registry.LocalRegistry;
 import com.gl.rpc.serializer.Serializer;
 import com.gl.rpc.serializer.SerializerFactory;
 import io.vertx.core.Handler;
@@ -37,7 +37,7 @@ public class HttpHandlerServer implements Handler<HttpServerRequest> {
                 return;
             }
             try {
-                Class<?> implClass = LocalRegister.get(rpcRequest.getServiceName());
+                Class<?> implClass = LocalRegistry.get(rpcRequest.getServiceName());
                 Method method = implClass.getMethod(rpcRequest.getMethodName(), rpcRequest.getParameterTypes());
                 Object res = method.invoke(implClass.newInstance(),rpcRequest.getArgs());
                 rpcResponse.setData(res);

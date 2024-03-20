@@ -19,42 +19,15 @@ public class VertxTcpServer implements HttpServer {
 
         NetServer server = vertx.createNetServer();
 
-        server.connectHandler(socket -> {
-            //处理请求
-                //构造parser
-                RecordParser parser = RecordParser.newFixed(8);
-                parser.setOutput(new Handler<Buffer>() {
-                    int size = -1;
-                    //一次完整的读取（全部）
-                    Buffer resultBuffer = Buffer.buffer();
-                    @Override
-                    public void handle(Buffer buffer) {
-                        if(-1 == size){
-                            size = buffer.getInt(4);
-                            parser.fixedSizeMode(size);
-                            //写入头信息到结果
-                            resultBuffer.appendBuffer(buffer);
-                        }else {
-                            resultBuffer.appendBuffer(buffer);
-                            System.out.println(resultBuffer.toString());
-                            //重置一轮
-                            parser.fixedSizeMode(8);
-                            size = -1;
-                            resultBuffer = Buffer.buffer();
-                        }
-
-                    }
-                });
-                socket.handler(parser);
-        });
+        server.connectHandler(new TcpServerHandler());
 
 
         //启动TCP服务器监听指定端口
         server.listen(port,result->{
             if(result.succeeded()){
-                log.info("TCP server started on port：" + port);
+                log.info("正在监听" + port);
             }else {
-                log.error("Failed to start TCP server: " + result.cause());
+                log.error("监听失败" + result.cause());
             }
         });
     }

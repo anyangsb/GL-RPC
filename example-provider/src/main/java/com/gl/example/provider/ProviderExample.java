@@ -3,16 +3,8 @@ package com.gl.example.provider;
 
 
 import com.gl.example.common.service.UserService;
-import com.gl.rpc.RpcApplication;
 import com.gl.rpc.bootstrap.ProviderBootstrap;
-import com.gl.rpc.config.RpcConfig;
-import com.gl.rpc.model.ServiceMetaInfo;
 import com.gl.rpc.model.ServiceRegisterInfo;
-import com.gl.rpc.registry.LocalRegister;
-import com.gl.rpc.registry.RegistryFactory;
-import com.gl.rpc.registry.Registry;
-import com.gl.rpc.server.VertxHttpServer;
-import com.gl.rpc.server.tcp.VertxTcpServer;
 
 import java.util.ArrayList;
 import java.util.List;

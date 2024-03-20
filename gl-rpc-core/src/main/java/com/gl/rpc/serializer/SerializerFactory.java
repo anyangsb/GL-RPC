@@ -2,9 +2,7 @@ package com.gl.rpc.serializer;
 
 import com.gl.rpc.spi.SpiLoader;
 
-import javax.xml.bind.annotation.XmlType;
-import java.util.HashMap;
-import java.util.Map;
+
 
 public class SerializerFactory {
 

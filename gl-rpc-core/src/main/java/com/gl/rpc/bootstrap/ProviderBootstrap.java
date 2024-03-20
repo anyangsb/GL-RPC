@@ -4,7 +4,7 @@ import com.gl.rpc.RpcApplication;
 import com.gl.rpc.config.RpcConfig;
 import com.gl.rpc.model.ServiceMetaInfo;
 import com.gl.rpc.model.ServiceRegisterInfo;
-import com.gl.rpc.registry.LocalRegister;
+import com.gl.rpc.registry.LocalRegistry;
 import com.gl.rpc.registry.Registry;
 import com.gl.rpc.registry.RegistryFactory;
 import com.gl.rpc.server.tcp.VertxTcpServer;
@@ -27,7 +27,7 @@ public class ProviderBootstrap {
             String serviceName = serviceRegisterInfo.getServiceName();
             Class<?> implClass = serviceRegisterInfo.getImplClass();
             //本地注册
-            LocalRegister.register(serviceName , implClass);
+            LocalRegistry.register(serviceName , implClass);
             //注册到注册中心
             Registry registry = RegistryFactory.getRegistry(rpcConfig.getRegistryConfig().getRegistry());
             ServiceMetaInfo serviceMetaInfo = new ServiceMetaInfo();

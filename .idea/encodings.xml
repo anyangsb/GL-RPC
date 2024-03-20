@@ -3,6 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/example-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example-common1/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example-common1/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example-consumer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example-consumer/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example-provider/src/main/java" charset="UTF-8" />
@@ -11,5 +13,8 @@
     <file url="file://$PROJECT_DIR$/gl-rpc-core/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gl-rpc-easy/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gl-rpc-easy/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gl-rpc-spring-boot-start/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/untitled131/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/untitled131/src/main/resources" charset="UTF-8" />
   </component>
 </project>

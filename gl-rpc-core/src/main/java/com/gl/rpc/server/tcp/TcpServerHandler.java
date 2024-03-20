@@ -3,7 +3,7 @@ package com.gl.rpc.server.tcp;
 import com.gl.rpc.model.RpcRequest;
 import com.gl.rpc.model.RpcResponse;
 import com.gl.rpc.protocol.*;
-import com.gl.rpc.registry.LocalRegister;
+import com.gl.rpc.registry.LocalRegistry;
 import io.vertx.core.Handler;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.net.NetSocket;
@@ -36,7 +36,7 @@ public class TcpServerHandler implements Handler<NetSocket> {
             RpcResponse rpcResponse = new RpcResponse();
             try {
                 // 获取要调用的服务实现类，通过反射调用
-                Class<?> implClass = LocalRegister.get(rpcRequest.getServiceName());
+                Class<?> implClass = LocalRegistry.get(rpcRequest.getServiceName());
                 Method method = implClass.getMethod(rpcRequest.getMethodName(), rpcRequest.getParameterTypes());
                 Object result = method.invoke(implClass.newInstance(), rpcRequest.getArgs());
                 // 封装返回结果

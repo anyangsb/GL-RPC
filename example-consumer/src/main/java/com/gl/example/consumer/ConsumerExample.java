@@ -24,7 +24,7 @@ public class ConsumerExample {
         user.setName("gl");
         User newUser = userService.getUser(user);
         if (newUser != null) {
-            System.out.println(newUser.getName());
+            System.out.println("请求调用成功，结果为 ： " + newUser.getName());
         } else {
             System.out.println("Null");
         }

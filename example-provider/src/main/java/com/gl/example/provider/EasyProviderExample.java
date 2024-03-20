@@ -2,7 +2,7 @@ package com.gl.example.provider;
 
 import com.gl.example.common.service.UserService;
 import com.gl.rpc.RpcApplication;
-import com.gl.rpc.registry.LocalRegister;
+import com.gl.rpc.registry.LocalRegistry;
 import com.gl.rpc.server.VertxHttpServer;
 
 @Deprecated
@@ -13,7 +13,7 @@ public class EasyProviderExample {
 
         RpcApplication.init();
 
-        LocalRegister.register(UserService.class.getName(),UserServiceImpl.class);
+        LocalRegistry.register(UserService.class.getName(),UserServiceImpl.class);
 
         VertxHttpServer server = new VertxHttpServer();
         server.doStart(8080);
