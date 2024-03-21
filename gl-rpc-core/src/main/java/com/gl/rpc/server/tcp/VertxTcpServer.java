@@ -17,8 +17,8 @@ public class VertxTcpServer implements HttpServer {
     public void doStart(int port) {
         Vertx vertx = Vertx.vertx();
 
+//        NetServer server = vertx.createNetServer();
         NetServer server = vertx.createNetServer();
-
         server.connectHandler(new TcpServerHandler());
 
 
@@ -32,7 +32,4 @@ public class VertxTcpServer implements HttpServer {
         });
     }
 
-    public static void main(String[] args) {
-        new VertxTcpServer().doStart(8888);
-    }
 }

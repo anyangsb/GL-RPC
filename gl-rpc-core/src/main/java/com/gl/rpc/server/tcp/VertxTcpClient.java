@@ -72,6 +72,7 @@ public class VertxTcpClient {
                             }
                     );
                     socket.handler(bufferHandlerWrapper);
+
                 });
 
         RpcResponse rpcResponse = responseFuture.get();

@@ -7,20 +7,22 @@ import com.gl.rpc.registry.LocalRegistry;
 import io.vertx.core.Handler;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.net.NetSocket;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
 
+@Slf4j
 public class TcpServerHandler implements Handler<NetSocket> {
-
     /**
      * 处理请求
-     *
      * @param socket the event to handle
      */
     @Override
     public void handle(NetSocket socket) {
+
         TcpBufferHandlerWrapper bufferHandlerWrapper = new TcpBufferHandlerWrapper(buffer -> {
+
             // 接受请求，解码
             ProtocolMessage<RpcRequest> protocolMessage;
             try {
@@ -60,7 +62,9 @@ public class TcpServerHandler implements Handler<NetSocket> {
                 throw new RuntimeException("协议消息编码错误");
             }
         });
+
         socket.handler(bufferHandlerWrapper);
+
     }
 
 }

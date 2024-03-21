@@ -32,6 +32,7 @@ public class TcpBufferHandlerWrapper implements Handler<Buffer> {
      * @return
      */
     private RecordParser initRecordParser(Handler<Buffer> bufferHandler) {
+        System.out.println("解决半包粘包问题");
         // 构造 parser
         RecordParser parser = RecordParser.newFixed(ProtocolConstant.MESSAGE_HEADER_LENGTH);
 
